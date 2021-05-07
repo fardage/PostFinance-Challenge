@@ -22,8 +22,8 @@ class DijkstraAlgorithmTest {
 
                 if (i != j) {
                     map = new Map();
-                    Node start = map.getNodeByName(String.valueOf(i));
-                    Node goal = map.getNodeByName(String.valueOf(j));
+                    Node start = map.getNodeById(i);
+                    Node goal = map.getNodeById(j);
 
                     DijkstraAlgorithm dijkstraAlgorithm = new DijkstraAlgorithm();
                     dijkstraAlgorithm.computePaths(start);

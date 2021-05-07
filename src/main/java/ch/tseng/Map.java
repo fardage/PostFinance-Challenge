@@ -9,31 +9,31 @@ public class Map {
     private final Node[] nodes;
 
     public Map() {
-        Node postfinanceHQ = new Node("0", 3, 5);
-        Node n11 = new Node("1", 10, 8);
-        Node n12 = new Node("2", 11, 3);
-        Node n13 = new Node("3", 14, 7);
-        Node n14 = new Node("4", 15, 1);
-        Node n15 = new Node("5", 18, 5);
-        Node powercoders = new Node("6", 22, 2);
-        Node n21 = new Node("7", 26, 4);
-        Node n22 = new Node("8", 35, 8);
-        Node n23 = new Node("9", 26, 9);
-        Node n24 = new Node("10", 28, 13);
-        Node n25 = new Node("11", 19, 9);
-        Node educreators = new Node("12", 19, 13);
-        Node n31 = new Node("13", 21, 15);
-        Node n32 = new Node("14", 24, 17);
-        Node n33 = new Node("15", 30, 15);
-        Node n34 = new Node("16", 34, 17);
-        Node n35 = new Node("17", 46, 15);
-        Node dsdFoundation = new Node("18", 38, 14);
-        Node n41 = new Node("19", 42, 13);
-        Node n42 = new Node("20", 41, 2);
-        Node n43 = new Node("21", 46, 9);
-        Node n44 = new Node("22", 48, 3);
-        Node n45 = new Node("23", 51, 14);
-        Node charityevent = new Node("24", 54, 8);
+        Node postfinanceHQ = new Node(0, 3, 5);
+        Node n11 = new Node(1, 10, 8);
+        Node n12 = new Node(2, 11, 3);
+        Node n13 = new Node(3, 14, 7);
+        Node n14 = new Node(4, 15, 1);
+        Node n15 = new Node(5, 18, 5);
+        Node powercoders = new Node(6, 22, 2);
+        Node n21 = new Node(7, 26, 4);
+        Node n22 = new Node(8, 35, 8);
+        Node n23 = new Node(9, 26, 9);
+        Node n24 = new Node(10, 28, 13);
+        Node n25 = new Node(11, 19, 9);
+        Node educreators = new Node(12, 19, 13);
+        Node n31 = new Node(13, 21, 15);
+        Node n32 = new Node(14, 24, 17);
+        Node n33 = new Node(15, 30, 15);
+        Node n34 = new Node(16, 34, 17);
+        Node n35 = new Node(17, 46, 15);
+        Node dsdFoundation = new Node(18, 38, 14);
+        Node n41 = new Node(19, 42, 13);
+        Node n42 = new Node(20, 41, 2);
+        Node n43 = new Node(21, 46, 9);
+        Node n44 = new Node(22, 48, 3);
+        Node n45 = new Node(23, 51, 14);
+        Node charityevent = new Node(24, 54, 8);
 
         postfinanceHQ.setAdjacencies(new Edge[]{
                 new Edge(postfinanceHQ, n11),
@@ -161,67 +161,67 @@ public class Map {
         };
     }
 
-    public List<List<Integer>> getPermutationsPostfinanceHQ() {
-        List<Integer> list = new ArrayList<>();
-        list.add(0);
-        list.add(1);
-        list.add(2);
-        list.add(3);
-        list.add(4);
-        list.add(5);
-        list.add(6);
+    public List<List<Node>> getPermutationsPostfinanceHQ() {
+        List<Node> list = new ArrayList<>();
+        list.add(nodes[0]);
+        list.add(nodes[1]);
+        list.add(nodes[2]);
+        list.add(nodes[3]);
+        list.add(nodes[4]);
+        list.add(nodes[5]);
+        list.add(nodes[6]);
 
-        List<List<Integer>> permutations = generatePermutations(list);
-        permutations.removeIf(permutation -> permutation.get(0) != 0 || permutation.get(6) != 6);
-
-        return permutations;
-    }
-
-    public List<List<Integer>> getPermutationsPowercoders() {
-        List<Integer> list = new ArrayList<>();
-        list.add(6);
-        list.add(7);
-        list.add(8);
-        list.add(9);
-        list.add(10);
-        list.add(11);
-        list.add(12);
-
-        List<List<Integer>> permutations = generatePermutations(list);
-        permutations.removeIf(permutation -> permutation.get(0) != 6 || permutation.get(6) != 12);
+        List<List<Node>> permutations = generatePermutations(list);
+        permutations.removeIf(permutation -> permutation.get(0).id != 0 || permutation.get(6).id != 6);
 
         return permutations;
     }
 
-    public List<List<Integer>> getPermutationsEducreators() {
-        List<Integer> list = new ArrayList<>();
-        list.add(12);
-        list.add(13);
-        list.add(14);
-        list.add(15);
-        list.add(16);
-        list.add(17);
-        list.add(18);
+    public List<List<Node>> getPermutationsPowercoders() {
+        List<Node> list = new ArrayList<>();
+        list.add(nodes[6]);
+        list.add(nodes[7]);
+        list.add(nodes[8]);
+        list.add(nodes[9]);
+        list.add(nodes[10]);
+        list.add(nodes[11]);
+        list.add(nodes[12]);
 
-        List<List<Integer>> permutations = generatePermutations(list);
-        permutations.removeIf(permutation -> permutation.get(0) != 12 || permutation.get(6) != 18);
+        List<List<Node>> permutations = generatePermutations(list);
+        permutations.removeIf(permutation -> permutation.get(0).id != 6 || permutation.get(6).id != 12);
 
         return permutations;
     }
 
-    public List<List<Integer>> getPermutationsDsdFoundation() {
-        List<Integer> list = new ArrayList<>();
-        list.add(18);
-        list.add(19);
-        list.add(20);
-        list.add(21);
-        list.add(22);
-        list.add(23);
-        list.add(24);
+    public List<List<Node>> getPermutationsEducreators() {
+        List<Node> list = new ArrayList<>();
+        list.add(nodes[12]);
+        list.add(nodes[13]);
+        list.add(nodes[14]);
+        list.add(nodes[15]);
+        list.add(nodes[16]);
+        list.add(nodes[17]);
+        list.add(nodes[18]);
 
-        List<List<Integer>> permutations = generatePermutations(list);
+        List<List<Node>> permutations = generatePermutations(list);
+        permutations.removeIf(permutation -> permutation.get(0).id != 12 || permutation.get(6).id != 18);
 
-        permutations.removeIf(permutation -> permutation.get(0) != 18 || permutation.get(6) != 24);
+        return permutations;
+    }
+
+    public List<List<Node>> getPermutationsDsdFoundation() {
+        List<Node> list = new ArrayList<>();
+        list.add(nodes[18]);
+        list.add(nodes[19]);
+        list.add(nodes[20]);
+        list.add(nodes[21]);
+        list.add(nodes[22]);
+        list.add(nodes[23]);
+        list.add(nodes[24]);
+
+        List<List<Node>> permutations = generatePermutations(list);
+
+        permutations.removeIf(permutation -> permutation.get(0).id != 18 || permutation.get(6).id != 24);
 
         return permutations;
     }
@@ -247,7 +247,9 @@ public class Map {
         return returnValue;
     }
 
-    private Edge isConnectedVia(Edge[] edges, Node toNode) {
+    private Edge isConnectedVia(Node fromNode, Node toNode) {
+        Edge[] edges = fromNode.getAdjacencies();
+
         for (Edge edge : edges) {
             if (edge.getTarget().equals(toNode)) {
                 return edge;
@@ -263,13 +265,12 @@ public class Map {
 
         for (int i = 0; i < fromNodes.length; i++) {
             Node from = fromNodes[i];
-            Edge[] edges = from.getAdjacencies();
             double[] row = new double[fromNodes.length];
 
             for (int j = 0; j < toNodes.length; j++) {
                 Node to = toNodes[j];
                 if (!from.equals(to)) {
-                    Edge edge = isConnectedVia(edges, to);
+                    Edge edge = isConnectedVia(from, to);
                     if (edge != null) {
                         row[j] = edge.getWeight();
                     } else {
@@ -296,12 +297,7 @@ public class Map {
         return nodes;
     }
 
-    public Node getNodeByName(String name) {
-        for (Node node : getNodes()) {
-            if (node.getName().equals(name)) {
-                return node;
-            }
-        }
-        return null;
+    public Node getNodeById(int id) {
+        return nodes[id];
     }
 }

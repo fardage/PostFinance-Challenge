@@ -12,8 +12,8 @@ class CalculatorTest {
 
     @Test
     void getDirectDistanceBetweenNodes() {
-        Node nodeA = new Node("a", 3, 5);
-        Node nodeB = new Node("b", 10, 8);
+        Node nodeA = new Node(0, 3, 5);
+        Node nodeB = new Node(1, 10, 8);
         double distance = Calculator.getDirectDistance(nodeA, nodeB);
         double distanceTwoDec = Math.round(distance * 100.0) / 100.0;
         Assertions.assertEquals(7.62, distanceTwoDec);
@@ -22,11 +22,11 @@ class CalculatorTest {
     @Test
     void getPathDistanceForPath() {
         List<Node> nodeList = new ArrayList<>();
-        Node nodeA = new Node("a", 1, 1);
+        Node nodeA = new Node(0, 1, 1);
         nodeList.add(nodeA);
-        Node nodeB = new Node("b", 2, 2);
+        Node nodeB = new Node(1, 2, 2);
         nodeList.add(nodeB);
-        Node nodeC = new Node("b", 3, 5);
+        Node nodeC = new Node(2, 3, 5);
         nodeList.add(nodeC);
 
         double expected = 1.414214 + 3.162278;

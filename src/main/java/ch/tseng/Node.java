@@ -3,15 +3,15 @@ package ch.tseng;
 import java.util.Objects;
 
 public class Node implements Comparable<Node> {
-    private final String name;
+    public final int id;
     private Node parent;
     private double shortestDistance = Double.POSITIVE_INFINITY;
     private Edge[] adjacencies;
-    private final int x;
-    private final int y;
+    public final int x;
+    public final int y;
 
-    public Node(String name, int x, int y) {
-        this.name = name;
+    public Node(int id, int x, int y) {
+        this.id = id;
         this.x = x;
         this.y = y;
     }
@@ -26,7 +26,7 @@ public class Node implements Comparable<Node> {
 
     @Override
     public String toString() {
-        return String.format("%s (%d,%d)", name, x, y);
+        return String.format("%s (%d,%d)", id, x, y);
     }
 
     @Override
@@ -46,24 +46,12 @@ public class Node implements Comparable<Node> {
 
         Node n = (Node) o;
 
-        return x == n.x && y == n.y && name.equals(n.name);
+        return x == n.x && y == n.y && id == n.id;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(x, y, name);
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public int getY() {
-        return y;
-    }
-
-    public int getX() {
-        return x;
+        return Objects.hash(x, y, id);
     }
 
     public Edge[] getAdjacencies() {

@@ -21,25 +21,25 @@ class MapTest {
 
     @Test
     void getPermutationsPostfinanceHQ() {
-        List<List<Integer>> nodeListPermutations = map.getPermutationsPostfinanceHQ();
+        List<List<Node>> nodeListPermutations = map.getPermutationsPostfinanceHQ();
         Assertions.assertEquals(120, nodeListPermutations.size());
     }
 
     @Test
     void getPermutationsPowercoders() {
-        List<List<Integer>> nodeListPermutations = map.getPermutationsPowercoders();
+        List<List<Node>> nodeListPermutations = map.getPermutationsPowercoders();
         Assertions.assertEquals(120, nodeListPermutations.size());
     }
 
     @Test
     void getPermutationsEducreators() {
-        List<List<Integer>> nodeListPermutations = map.getPermutationsEducreators();
+        List<List<Node>> nodeListPermutations = map.getPermutationsEducreators();
         Assertions.assertEquals(120, nodeListPermutations.size());
     }
 
     @Test
     void getPermutationsDsdFoundation() {
-        List<List<Integer>> nodeListPermutations = map.getPermutationsDsdFoundation();
+        List<List<Node>> nodeListPermutations = map.getPermutationsDsdFoundation();
         Assertions.assertEquals(120, nodeListPermutations.size());
     }
 
@@ -100,8 +100,8 @@ class MapTest {
         Node[] nodes = map.getNodes();
         for (int i = 0; i < nodes.length; i++) {
             Point expected = coords.get(i);
-            Assertions.assertEquals(expected.x, nodes[i].getX());
-            Assertions.assertEquals(expected.y, nodes[i].getY());
+            Assertions.assertEquals(expected.x, nodes[i].x);
+            Assertions.assertEquals(expected.y, nodes[i].y);
         }
     }
 }

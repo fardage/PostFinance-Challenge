@@ -34,6 +34,7 @@ public class Main {
         totalDistance += Calculator.getBestPathDistance(map.getPermutationsPowercoders(), floydWarshallMatrix);
         totalDistance += Calculator.getBestPathDistance(map.getPermutationsEducreators(), floydWarshallMatrix);
         totalDistance += Calculator.getBestPathDistance(map.getPermutationsDsdFoundation(), floydWarshallMatrix);
-        System.out.println(totalDistance);
+
+        System.out.println("Best: " + totalDistance);
     }
 }
